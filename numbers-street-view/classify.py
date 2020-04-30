@@ -1,8 +1,12 @@
 """
-Basic Python3.7 script that uses random forest estimator from the scikit-learn machine learning module to train and test image classification model
+Basic Python3.7 script for image classification model
+    ML Estimator Strategies:
+        - Random Forest Classifier
+    Data Set:
+        - Stanford's SVHN Database (32 x 32)
 Written by David Easton, 4/29/2020
 """
-# import major libraries
+# # import major libraries
 import scipy.io
 import numpy as np
 import matplotlib.pyplot as plt
