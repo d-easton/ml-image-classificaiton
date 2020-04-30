@@ -10,6 +10,7 @@ import matplotlib.pyplot as plt
 # import scikit learn funcs and algorithms
 from sklearn.utils import shuffle
 from sklearn.ensemble import RandomForestClassifier
+from sklearn.metrics import accuracy_score
 # from sklearn.model_selection import train_test_split
 
 from .funcs import *
@@ -49,4 +50,6 @@ classifier = RandomForestClassifier()
 # training_images, testing_images, training_labels, testing_labels = train_test_split(images, labels)
 classifier.fit(train_images, train_labels)
 
-# TODO: add accuracy score
+# Assess accuracy score
+model_estimate = classifier.predict(test_images)
+print(f"Accuracy: %d", accuracy_score(test_labels, model_estimate))
