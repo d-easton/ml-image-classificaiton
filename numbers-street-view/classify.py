@@ -25,12 +25,6 @@ train_labels = train_data['y']
 test_images = test_data['X']
 test_labels = test_data['y']
 
-# test image display
-# index = 25
-# plt.imshow(images[:,:,:,index])
-# plt.show()
-# print(labels[index])
-
 # vectorize 
 train_images = vectorizeMatrix4D(train_images)
 train_labels = vectorizeLabels(train_labels)
