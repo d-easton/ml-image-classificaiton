@@ -7,9 +7,8 @@ import scipy.io
 import numpy as np
 import matplotlib.pyplot as plt
 
-from funcs import *
 from sklearn.utils import shuffle
-
+from .funcs import *
 
 # assign dataset to variable
 data = scipy.io.loadmat('./datasets/train_32x32.mat')
