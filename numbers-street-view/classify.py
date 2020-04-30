@@ -1,13 +1,16 @@
 """
-Basic Python3.7 script that uses scikit-learn machine learning module to train and test image classification model
+Basic Python3.7 script that uses random forest estimator from the scikit-learn machine learning module to train and test image classification model
 Written by David Easton, 4/29/2020
 """
-
+# import major libraries
 import scipy.io
 import numpy as np
 import matplotlib.pyplot as plt
 
+# import scikit learn funcs and algorithms
 from sklearn.utils import shuffle
+from sklearn.ensemble import RandomForestClassifier
+
 from .funcs import *
 
 # assign dataset to variable
@@ -29,3 +32,6 @@ labels = vectorizeLabels(labels)
 
 # shuffle dataset with sklearn shuffle to avoid pre-distribution biases
 images, labels = shuffle(images, labels)
+
+# implement random forest classifier
+classifier = RandomForestClassifier()
