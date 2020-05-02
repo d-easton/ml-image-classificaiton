@@ -1,4 +1,3 @@
-__all__ = ["vectorizeMatrix4D"]
+#__all__ = ["vectorizeMatrix4D"]
 
-from .funcs import *
 from .classify import *
