@@ -12,7 +12,14 @@ from cli.errors import UnsupportedArgumentError
 
 if __name__ == "__main__":
     try:
-        process_args()
+        args = process_args()
+        if "svhn" in args:
+            if "rfc" in args:
+                print("Inputs well recieved")
+                #TODO: call classify method now
+        else:
+            raise UnsupportedArgumentError(f"arguments unrecognized following parse")
+
     except UnsupportedArgumentError as err:
         print(f"Error (Unsupported Argument): {err}")
         sys.exit(1)

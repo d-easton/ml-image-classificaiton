@@ -29,8 +29,8 @@ def main():
 
     if dataset == "svhn":
         if estimator == "rfc":
-            print(f"inputs well recieved -- d: {dataset}  e: {estimator}")
-            return 0
+            #print(f"inputs well recieved -- d: {dataset}  e: {estimator}")
+            return dataset, estimator
         else:
             raise UnsupportedArgumentError(f"unsupported estimator '{estimator}' for dataset {dataset}") 
 
@@ -38,4 +38,3 @@ def main():
          raise UnsupportedArgumentError(f"support for '{dataset}' coming soon")
     else:
         raise UnsupportedArgumentError(f"unsupported dataset '{dataset}'")
-    #print("d = {0} || e = {1}".format(dataset, estimator))
