@@ -1,6 +1,6 @@
 from enum import Enum
 
-class DatasetSize(Enum):
+class ModelSize(Enum):
     SMALL = 1
     MEDIUM = 2
     LARGE = 3
