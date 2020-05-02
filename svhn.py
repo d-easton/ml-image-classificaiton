@@ -20,8 +20,9 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score
 # from sklearn.model_selection import train_test_split
 
-sys.path.append(os.path.dirname(os.path.abspath(__file__)))
-from funcs import *
+from support.funcs import *
+#from support.variables import *
+
 def classify():
     # assign dataset to variable
     train_data = scipy.io.loadmat('./datasets/train_32x32.mat')
