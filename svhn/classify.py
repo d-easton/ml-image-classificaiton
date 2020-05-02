@@ -6,6 +6,9 @@ Basic Python3.7 script for image classification model
         - Stanford's SVHN Database (32 x 32)
 Written by David Easton, 4/29/2020
 """
+
+import sys, os
+
 # # import major libraries
 import scipy.io
 import numpy as np
@@ -17,7 +20,8 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score
 # from sklearn.model_selection import train_test_split
 
-from import funcs
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+from funcs import *
 
 # assign dataset to variable
 train_data = scipy.io.loadmat('./datasets/train_32x32.mat')

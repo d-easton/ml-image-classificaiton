@@ -3,6 +3,7 @@ Machine learning for simple image classification using Python and scikit-learn
 Written by David Easton, 4/29/2020
 """
 import sys, argparse
+from svhn import classify
 
 if __name__ == "__main__":
 
