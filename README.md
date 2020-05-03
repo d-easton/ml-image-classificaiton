@@ -8,7 +8,7 @@ These packages can be independently with pip or, following the creation of a vir
 ### Datasets
 Image classification models need large quantities of data to train with. The size of these files means you need to download the necessary datasets independently.
 Executing the configure script in the CLI will automatically take care of this for you.
-'''
+'''git 
 python 3.6.9 configure.py
 '''
 If you'd like to independently download the datasets, they can be found at the following sites:
@@ -27,4 +27,4 @@ The datasets/ directory should be populated with *.mat files once the datasets h
 
 ## Estimators
 Estimators are included as part of the scikit-learn library. At this time, the following estimator models are supported
-- 
+- Random Forest Classifier (rfc)
