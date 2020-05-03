@@ -18,19 +18,27 @@ import matplotlib.pyplot as plt
 from sklearn.utils import shuffle
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score
-from sklearn.model_selection import train_test_split
+from sklearn.model_selection import train_test_split, GridSearchCV
+#from skimage.io import imread
 
 from helpers.funcs import *
 from helpers.variables import ModelSize
 
 def classify_svhn(dataset, estimator, model_size):
-
+    print("got the method call")
     #TODO: multiple estimators
     # introduce random forest classifier and other vars
     classifier = RandomForestClassifier()
-    train_data, test_data = []
-    train_images, train_labels, test_images, test_labels = []
+    train_data = []; test_data = []
     
+    #X values 
+    train_images = []; test_images = []
+
+    #y values
+    train_labels = []; test_labels = []
+    
+    # TODO: OK that format is ugly whatever I'm just trying to make it run
+
     # based on the recieved model size, open relevant svhn files and prepare dataset variables      # assign dataset to variable
     if model_size == ModelSize.SMALL:
         # For small model sizes, do all the normal steps independently
@@ -89,3 +97,4 @@ def classify_svhn(dataset, estimator, model_size):
     # Assess accuracy score
     model_estimate = classifier.predict(test_images)
     print(f"Accuracy: %d", accuracy_score(test_labels, model_estimate))
+
