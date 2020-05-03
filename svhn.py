@@ -18,7 +18,7 @@ import matplotlib.pyplot as plt
 from sklearn.utils import shuffle
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score
-from sklearn.model_selection import train_test_split, GridSearchCV
+from sklearn.model_selection import train_test_split    #, GridSearchCV
 #from skimage.io import imread
 
 from helpers.funcs import *
@@ -54,6 +54,8 @@ def classify_svhn(dataset, estimator, model_size):
 
         # shuffle and split trianing dataset into testing subset and smaller testing subset
         train_images, train_labels = shuffle(train_images, train_labels)
+        print(f"X LENGTH: {len(train_images)}")
+        print(f"y LENGTH: {len(train_labels)}")
         train_images, test_images, train_labels, test_images = train_test_split(train_images, train_labels, test_size=.15)
     else:
         train_data = scipy.io.loadmat('./datasets/train_32x32.mat')
@@ -72,7 +74,6 @@ def classify_svhn(dataset, estimator, model_size):
         test_labels = vectorizeLabels(test_labels)
 
     # shuffle dataset with sklearn shuffle to avoid pre-distribution biases
-    # TODO: split to two calls for different random state?
     train_images, train_labels, test_images, test_labels = shuffle(train_images, train_labels, test_images, test_labels)
 
     # Train RFC classifier
